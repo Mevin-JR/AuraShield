@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraShield DB</title>
+
+    <link href="../static/css/style2.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="../static/img/AS_logo.png">
+
+    <script src="../static/js/script2.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body id="body">
+    <div class="loader" id="loader"></div>
+    <div class="popup">
+        <form action='/short-text' method="post" class="container-sm text-center"  id="short-text">
+            <h1 class="mb-5">[ Short Text Input ]</h1>
+            <div class="d-flex">
+                <label class="mt-2" for="productName">Product</label>
+                <input type="text" placeholder="Enter product name" name="productName">
+            </div>
+            <div class="container-sm d-flex" id="info-text">
+                <svg id="info-icon" viewBox="0 0 512 512" fill="#666666" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M256 10.24C120.243 10.24 10.2144 120.269 10.2144 256C10.211 288.278 16.5661 320.24 28.9168 350.062C41.2675 379.884 59.3718 406.98 82.1958 429.804C105.02 452.628 132.116 470.732 161.938 483.083C191.759 495.434 223.722 501.789 256 501.786C391.706 501.786 501.76 391.757 501.76 256C501.76 120.269 391.706 10.24 256 10.24ZM278.938 98.9696C302.899 98.9696 309.939 112.87 309.939 128.768C309.939 148.608 294.067 166.963 266.957 166.963C244.275 166.963 233.472 155.571 234.138 136.704C234.138 120.806 247.424 98.9696 278.938 98.9696ZM217.549 403.2C201.165 403.2 189.21 393.242 200.653 349.594L219.418 272.154C222.669 259.763 223.206 254.797 219.418 254.797C214.528 254.797 193.254 263.347 180.71 271.795L172.544 258.406C212.352 225.152 258.125 205.645 277.709 205.645C294.093 205.645 296.806 224.998 288.64 254.797L267.136 336.205C263.322 350.592 264.96 355.558 268.774 355.558C273.69 355.558 289.766 349.619 305.587 337.152L314.854 349.594C276.122 388.301 233.907 403.2 217.549 403.2Z" fill="#666666"/>
+                </svg>                    
+                <p>Short text input expects a product name (ex. Dove Cream Bathing Beauty Bar),
+                    product name need not be complete if its' in our database
+                </p>
+            </div>
+            <button class="btn btn-outline-success" id="submit-btn">Submit</button>
+            <button class="btn btn-outline-danger" onclick="location.reload()" id="cancel-btn">Cancel</button>
+        </form>
+        <form action="/text-input" class="container-sm d-flex flex-column text-center"  id="text-input">
+            <h1 class="mb-5">[ Text Input ]</h1>
+            <div class="d-flex">
+                <label class="mt-1 me-4" for="brand">Brand</label>
+                <input type="text" placeholder="Enter brand" name="brand">
+            </div>
+            <div class="d-flex mt-3 text-start">
+                <label class="mt-2" for="productName">Product</label>
+                <input type="text" placeholder="Enter product name" name="productName">
+            </div>
+            <label class="my-3" for="ingredients">Ingredients (Optional)</label>
+            <textarea name="ingredients" placeholder="Enter ingredients..." rows="4" cols="50" form="text-input" style="resize: none;"></textarea>
+            <div class="container-sm d-flex" id="info-text">
+                <svg id="info-icon" viewBox="0 0 512 512" fill="#666666" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M256 10.24C120.243 10.24 10.2144 120.269 10.2144 256C10.211 288.278 16.5661 320.24 28.9168 350.062C41.2675 379.884 59.3718 406.98 82.1958 429.804C105.02 452.628 132.116 470.732 161.938 483.083C191.759 495.434 223.722 501.789 256 501.786C391.706 501.786 501.76 391.757 501.76 256C501.76 120.269 391.706 10.24 256 10.24ZM278.938 98.9696C302.899 98.9696 309.939 112.87 309.939 128.768C309.939 148.608 294.067 166.963 266.957 166.963C244.275 166.963 233.472 155.571 234.138 136.704C234.138 120.806 247.424 98.9696 278.938 98.9696ZM217.549 403.2C201.165 403.2 189.21 393.242 200.653 349.594L219.418 272.154C222.669 259.763 223.206 254.797 219.418 254.797C214.528 254.797 193.254 263.347 180.71 271.795L172.544 258.406C212.352 225.152 258.125 205.645 277.709 205.645C294.093 205.645 296.806 224.998 288.64 254.797L267.136 336.205C263.322 350.592 264.96 355.558 268.774 355.558C273.69 355.558 289.766 349.619 305.587 337.152L314.854 349.594C276.122 388.301 233.907 403.2 217.549 403.2Z" fill="#666666"/>
+                </svg>                    
+                <p>Text input expects detailed information about the product you are searching for, 
+                    filling all fields will result in accurate search results
+                </p>
+            </div>
+            <div>
+                <button class="btn btn-outline-success" id="submit-btn">Submit</button>
+                <button class="btn btn-outline-danger" onclick="window.location.reload()" id="cancel-btn">Cancel</button>
+            </div>
+        </form>
+        <div class="container-sm text-center" id="image-input">
+            <h1 class="mb-4">[ Image Input (BETA) ]</h1>
+            <p class="mb-4">Image input is still undergoing changes and modifications, its <span>disabled</span> currently</p>
+            <button class="btn btn-outline-warning" onclick="location.reload()">Return</button>
+        </div>
+        <form action='/ing-input' method="post" class="container-sm text-center"  id="ing-input">
+            <h1 class="mb-5">[ Ingredient Input ]</h1>
+            <div class="d-flex">
+                <label class="mt-2" for="ingredient">Ingredient</label>
+                <input type="text" placeholder="Enter ingredient" name="ingredient">
+            </div>
+            <div class="container-sm d-flex" id="info-text">
+                <svg id="info-icon" viewBox="0 0 512 512" fill="#666666" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M256 10.24C120.243 10.24 10.2144 120.269 10.2144 256C10.211 288.278 16.5661 320.24 28.9168 350.062C41.2675 379.884 59.3718 406.98 82.1958 429.804C105.02 452.628 132.116 470.732 161.938 483.083C191.759 495.434 223.722 501.789 256 501.786C391.706 501.786 501.76 391.757 501.76 256C501.76 120.269 391.706 10.24 256 10.24ZM278.938 98.9696C302.899 98.9696 309.939 112.87 309.939 128.768C309.939 148.608 294.067 166.963 266.957 166.963C244.275 166.963 233.472 155.571 234.138 136.704C234.138 120.806 247.424 98.9696 278.938 98.9696ZM217.549 403.2C201.165 403.2 189.21 393.242 200.653 349.594L219.418 272.154C222.669 259.763 223.206 254.797 219.418 254.797C214.528 254.797 193.254 263.347 180.71 271.795L172.544 258.406C212.352 225.152 258.125 205.645 277.709 205.645C294.093 205.645 296.806 224.998 288.64 254.797L267.136 336.205C263.322 350.592 264.96 355.558 268.774 355.558C273.69 355.558 289.766 349.619 305.587 337.152L314.854 349.594C276.122 388.301 233.907 403.2 217.549 403.2Z" fill="#666666"/>
+                </svg>                    
+                <p>Ingredient input expects a ingredient name, if the ingredient is not recognized
+                    by our algorithm it will return an error
+                </p>
+            </div>
+            <button class="btn btn-outline-success" id="submit-btn">Submit</button>
+            <button class="btn btn-outline-danger" onclick="location.reload()" id="cancel-btn">Cancel</button>
+        </form>
+    </div>
+    <section class="container-fluid text-white" id="hero">
+        <nav class="navbar navbar-expand-sm fixed-top" id="navbar">
+            <div class="container-fluid my-3">
+                <a class="navbar-brand" href="#" id="nav-logo">Aura Shield</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" fill="#fff" id="hamburger-icon">
+                        <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/>
+                    </svg>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                    <ul class="navbar-nav" id="nav-list">
+                        <li class="nav-item mx-5"><a href="/" class="nav-link">Home</a></li>
+                        <li class="nav-item mx-5"><a href="/#motto" class="nav-link">About</a></li>
+                        <li class="nav-item mx-5"><a href="/#about" class="nav-link">Services</a></li>
+                        <li class="nav-item mx-5"><a href="#mid" class="nav-link">Try Out</a></li>
+                        <li class="nav-item mx-5"><a href="/team" class="nav-link" id="collapse-contact">Team</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-outline-light text-light" onclick="window.location.href = '/team'" id="contact-btn">Team</button>
+            </div>
+        </nav>
+        <div class="container-md text-white position-absolute" id="hero-text">
+            <h1>Aura-Shield Database</h1>
+            <p>Unlock information you never had, explore our comprehensive cosmetics database</p>
+        </div>
+        <div class="container-fluid position-relative">
+            <img src="../static/img/hero-right.png" alt="" id="hero-img">
+        </div>
+    </section>
+    <section class="container-fluid text-white text-center" id="mid">
+        <h1 id="choose-input-title">Choose Input Method</h1>
+        <div class="container-md mt-5 w-50 bg-white">
+            <hr class="solid-seperator">
+        </div>
+        <div class="container-sm" id="input-methods">
+            <div class="container-sm d-flex mb-5" id="method-1">
+                <svg class="mx-4" id="method-1-icon" viewBox="0 0 100 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 10.625C52.7635 10.625 55 8.24606 55 5.3125C55 2.37894 52.7635 0 50 0C46.154 0 42.6775 1.59162 40.02 4.16287C37.358 1.60331 33.865 0 30 0C27.2365 0 25 2.37894 25 5.3125C25 8.24606 27.2365 10.625 30 10.625C32.759 10.625 35 13.0087 35 15.9375V16.2748V69.0625C35 71.9913 32.759 74.375 30 74.375C27.2365 74.375 25 76.7539 25 79.6875C25 82.6211 27.2365 85 30 85C33.8555 85 37.34 83.4036 40 80.8547C42.66 83.4036 46.1445 85 50 85C52.7635 85 55 82.6211 55 79.6875C55 76.7539 52.7635 74.375 50 74.375C47.241 74.375 45 71.9913 45 68.7252V15.9375C45 13.0087 47.241 10.625 50 10.625Z" fill="white"/>
+                    <path d="M80 15.9375H55C52.2365 15.9375 50 18.3164 50 21.25C50 24.1836 52.2365 26.5625 55 26.5625H80C85.5125 26.5625 90 31.3278 90 37.1875V47.8125C90 53.6722 85.5125 58.4375 80 58.4375H55C52.2365 58.4375 50 60.8164 50 63.75C50 66.6836 52.2365 69.0625 55 69.0625H80C91.0305 69.0625 100 59.5297 100 47.8125V37.1875C100 25.4702 91.0305 15.9375 80 15.9375ZM20 69.0625H25C27.7635 69.0625 30 66.6836 30 63.75C30 60.8164 27.7635 58.4375 25 58.4375H20C14.4875 58.4375 10 53.6722 10 47.8125V37.1875C10 31.3278 14.4875 26.5625 20 26.5625H25C27.7635 26.5625 30 24.1836 30 21.25C30 18.3164 27.7635 15.9375 25 15.9375H20C8.9695 15.9375 0 25.4702 0 37.1875V47.8125C0 59.5297 8.9695 69.0625 20 69.0625Z" fill="white" fill-opacity="0.36"/>
+                </svg>
+                <div class="vr"></div>
+                <div class="px-4 py-3" id="method-tile-info">
+                    <h2>Short Text Input</h2>
+                    <p>Input just the product name, our databases will return all related information about it</p>
+                </div>
+            </div>
+            <div class="container-sm d-flex mb-5" id="method-2">
+                <svg class="mx-4" id="method-2-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.375 36.125H53.5625C54.3913 36.125 55.1862 35.7958 55.7722 35.2097C56.3583 34.6237 56.6875 33.8288 56.6875 33C56.6875 32.1712 56.3583 31.3763 55.7722 30.7903C55.1862 30.2042 54.3913 29.875 53.5625 29.875H26.375C25.5462 29.875 24.7513 30.2042 24.1653 30.7903C23.5792 31.3763 23.25 32.1712 23.25 33C23.25 33.8288 23.5792 34.6237 24.1653 35.2097C24.7513 35.7958 25.5462 36.125 26.375 36.125ZM26.375 53.125H43.375C44.2038 53.125 44.9987 52.7958 45.5847 52.2097C46.1708 51.6237 46.5 50.8288 46.5 50C46.5 49.1712 46.1708 48.3763 45.5847 47.7903C44.9987 47.2042 44.2038 46.875 43.375 46.875H26.375C25.5462 46.875 24.7513 47.2042 24.1653 47.7903C23.5792 48.3763 23.25 49.1712 23.25 50C23.25 50.8288 23.5792 51.6237 24.1653 52.2097C24.7513 52.7958 25.5462 53.125 26.375 53.125Z" fill="white"/>
+                    <path d="M26.3749 70.125H63.1874C63.5987 70.1274 64.0064 70.0485 64.3871 69.893C64.7679 69.7375 65.1142 69.5084 65.4062 69.2188L91.8437 42.7812C92.4712 42.1724 92.97 41.4438 93.3107 40.6386C93.6514 39.8334 93.8269 38.968 93.8269 38.0937C93.8269 37.2195 93.6514 36.3541 93.3107 35.5489C92.97 34.7437 92.4712 34.0151 91.8437 33.4062L87.0312 28.7187C86.4224 28.0913 85.6938 27.5924 84.8886 27.2517C84.0834 26.9111 83.218 26.7355 82.3437 26.7355C81.4694 26.7355 80.604 26.9111 79.7988 27.2517C78.9936 27.5924 78.265 28.0913 77.6562 28.7187L73.5312 32.8438V16C73.5564 14.2784 72.9007 12.6164 71.7069 11.3758C70.513 10.1351 68.8775 9.41601 67.1562 9.375H12.7812C11.9155 9.37491 11.0585 9.5469 10.2599 9.88098C9.46136 10.215 8.73716 10.7045 8.12944 11.321C7.52171 11.9374 7.04259 12.6685 6.71993 13.4718C6.39728 14.2751 6.23752 15.1344 6.24994 16V84C6.23752 84.8655 6.39728 85.7249 6.71993 86.5282C7.04259 87.3315 7.52171 88.0626 8.12944 88.679C8.73716 89.2955 9.46136 89.785 10.2599 90.119C11.0585 90.4531 11.9155 90.6251 12.7812 90.625H67.1562C68.8884 90.625 70.5496 89.9369 71.7745 88.712C72.9993 87.4872 73.6874 85.8259 73.6874 84.0938V75C73.6874 74.1712 73.3582 73.3763 72.7722 72.7903C72.1861 72.2042 71.3912 71.875 70.5624 71.875C69.7336 71.875 68.9388 72.2042 68.3527 72.7903C67.7667 73.3763 67.4374 74.1712 67.4374 75V84C67.4374 84.0746 67.4078 84.1461 67.3551 84.1989C67.3023 84.2516 67.2308 84.2812 67.1562 84.2812H12.7812C12.7066 84.2812 12.6351 84.2516 12.5823 84.1989C12.5296 84.1461 12.4999 84.0746 12.4999 84V16C12.4844 15.9563 12.4799 15.9094 12.4869 15.8635C12.4939 15.8176 12.5121 15.7742 12.5399 15.737C12.5678 15.6999 12.6044 15.6702 12.6465 15.6507C12.6886 15.6311 12.7349 15.6223 12.7812 15.625H67.1562C67.2308 15.625 67.3023 15.6546 67.3551 15.7074C67.4078 15.7601 67.4374 15.8317 67.4374 15.9063V39L51.3437 55.0937C51.0541 55.3857 50.8249 55.732 50.6694 56.1128C50.5139 56.4935 50.4351 56.9012 50.4374 57.3125V63.8125H26.3749C25.5461 63.8125 24.7513 64.1417 24.1652 64.7278C23.5792 65.3138 23.2499 66.1087 23.2499 66.9375C23.2499 67.7663 23.5792 68.5612 24.1652 69.1472C24.7513 69.7333 25.5461 70.0625 26.3749 70.0625V70.125ZM56.6874 58.6875L72.6874 42.6875L72.8437 42.5312L82.2187 33.1562C82.2703 33.1101 82.337 33.0846 82.4062 33.0846C82.4754 33.0846 82.5421 33.1101 82.5937 33.1562L87.4999 37.9687V38.3438L61.9687 63.875H56.6874V58.6875Z" fill="white"/>
+                </svg>                 
+                <div class="vr"></div>
+                <div class="px-4 py-4" id="method-tile-info">
+                    <h2>Text Input</h2>
+                    <p>Input detailed product details for faster and better search results</p>
+                </div>
+            </div>
+            <div class="container-sm d-flex" id="method-3">
+                <svg class="mx-4" id="method-3-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M80.4688 80.4688H19.5312C15.9375 80.4688 12.9688 77.5 12.9688 73.9063V34.6875C12.9688 31.0938 15.9375 28.125 19.5312 28.125H32.6562C32.9688 28.125 33.75 27.6563 33.9062 27.3438L36.25 22.5C37.1875 20.7813 39.375 19.375 41.4063 19.375H58.75C60.7812 19.375 62.9688 20.7813 63.9063 22.5L66.25 27.3438C66.4063 27.6563 67.0313 28.125 67.5 28.125H80.625C84.2188 28.125 87.1875 31.0938 87.1875 34.6875V73.9063C87.0312 77.5 84.0625 80.4688 80.4688 80.4688ZM19.5312 32.6563C18.2812 32.6563 17.3438 33.5938 17.3438 34.8438V74.0625C17.3438 75.3125 18.2812 76.25 19.5312 76.25H80.4688C81.7188 76.25 82.6562 75.3125 82.6562 74.0625V34.8438C82.6562 33.5938 81.7188 32.6563 80.4688 32.6563H67.3438C65.3125 32.6563 63.125 31.25 62.1875 29.5313L59.8438 24.6875C59.6875 24.375 59.0625 23.9063 58.5938 23.9063H41.25C40.9375 23.9063 40.1562 24.375 40 24.6875L37.6562 29.5313C36.7188 31.25 34.5312 32.6563 32.5 32.6563H19.5312Z" fill="white"/>
+                    <path d="M50 71.7188C39.2188 71.7188 30.4688 62.9688 30.4688 52.1875C30.4688 41.4063 39.2188 32.6562 50 32.6562C60.7812 32.6562 69.5312 41.4063 69.5312 52.1875C69.5312 62.9688 60.7812 71.7188 50 71.7188ZM50 36.875C41.5625 36.875 34.6875 43.75 34.6875 52.1875C34.6875 60.625 41.5625 67.5 50 67.5C58.4375 67.5 65.3125 60.625 65.3125 52.1875C65.3125 43.75 58.4375 36.875 50 36.875ZM73.9063 36.875C73.9063 38.125 72.9688 39.0625 71.7188 39.0625C70.4688 39.0625 69.5312 38.125 69.5312 36.875C69.5312 35.625 70.4688 34.6875 71.7188 34.6875C72.9688 34.6875 73.9063 35.7812 73.9063 36.875ZM21.7188 23.9062H30.4688V26.0938H21.7188V23.9062Z" fill="white"/>
+                    <path d="M50 43.4375V41.25C44.0625 41.25 39.0625 46.0938 39.0625 52.1875H41.25C41.25 47.3438 45.1562 43.4375 50 43.4375Z" fill="white"/>
+                </svg>     
+                <div class="vr"></div>
+                <div id="method-tile-info">
+                    <h2>Image Input (BETA)</h2>
+                    <p>Input using images, upload image of ingredient list from the product boxes</p>
+                </div>
+            </div>
+            <div class="container-sm d-flex" id="method-4">
+                <svg id="method-4-icon" viewBox="0 0 512 512" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_157_2)">
+                        <path d="M106.667 362.667V405.333H405.333V362.667H106.667ZM202.667 273.067H309.333L328.533 320H373.333L272 85.3334H240L138.667 320H183.467L202.667 273.067ZM256 127.573L295.893 234.667H216.107L256 127.573Z" fill="#fff"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_157_2">
+                            <rect width="512" height="512" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div class="vr"></div>
+                <div id="method-tile-info">
+                    <h2>Ingredient Input</h2>
+                    <p>Input an ingredient, our machine learning algorithm will identify it</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm" id="result-toxin-container">
+            <div class="container-sm" id="result">
+                <h1 class="mb-4">Result</h1>
+                <div class="container-sm d-inline-block" id="result-container">
+                    <div class="tools">
+                        <div class="circle"><span class="red box"></span></div>
+                        <div class="circle"><span class="yellow box"></span></div>
+                        <div class="circle"><span class="green box"></span></div>
+                    </div>
+                    <div class="card-content">
+                        <p class="result-header">Brand</p>
+                        <p class="result-display" id="result-brand"></p>
+                        <p class="result-header">Product Name</p>
+                        <p class="result-display" id="result-product"></p>
+                        <p class="result-header">Ingredients</p>
+                        <p class="result-display" id="result-ingredients"></p>
+                        <p class="result-header">Skin Type</p>
+                        <p class="result-display" id="result-skintype"></p>
+                        <p class="result-header">Harmful Ingredients</p>
+                        <p class="result-display mb-4" id="result-toxins"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm" id="toxicity-result">
+                <h1 class="mb-4">Result</h1>
+                <div class="container-sm" id="toxin-result-container">
+                    <div class="tools">
+                        <div class="circle"><span class="red box"></span></div>
+                        <div class="circle"><span class="yellow box"></span></div>
+                        <div class="circle"><span class="green box"></span></div>
+                    </div>
+                    <div class="card-content">
+                        <p class="toxicity-header">Toxicity</p>
+                        <p class="toxicity-result-p" id="result-toxicity"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup">
+            <div class="container-sm text-center text-white" id="error-msg">
+                <h1>Something went wrong!</h1>
+                <p>Error: No data found in database, please check your input and try again</p>
+                <button class="btn btn-outline-warning" onclick="location.reload()">Return</button>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid text-center position-absolute" id="footer">
+        <p id="watermark">&copy; Designed & Developed by <a href="#">Aura Shield</a></p>
+    </section>
+</body>
+</html>

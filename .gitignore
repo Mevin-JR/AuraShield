@@ -1,0 +1,15 @@
+# Folders
+
+build/
+
+flask/
+
+models/
+
+# Database
+
+/AuraShieldDB.db
+
+# Spec file
+
+/main.spec

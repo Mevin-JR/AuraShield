@@ -1,0 +1,322 @@
+/* "M PLUS 1 Code" Font */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
+
+* {
+    font-family: 'M PLUS 1 Code', monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: opacity 1s, visibility 1s;
+    z-index: 1001;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #0d0d0d;
+    border-top-color: cyan;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* Navbar */
+
+#navbar {
+    z-index: 1000;
+}
+
+#nav-logo {
+    color: cyan;
+    text-decoration: none;
+    margin: 0 10rem 0 1rem;
+    font-size: 24px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+#nav-logo:after,
+#nav-list a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: cyan;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+#nav-list a:after {
+    background: gray;
+}
+
+#nav-logo:hover {
+    transform: scale(1.1);
+}
+
+#nav-logo:hover:after,
+#nav-list a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+#nav-list a {
+    font-weight: 500;
+}
+
+#collapsibleNavbar ul .nav-link {
+    font-size: 18px;
+    color: #A4A4A4;
+    position: relative;
+}
+
+#contact-btn {
+    background-color: black;
+    color: white;
+    width: 115px;
+    height: 40px;
+    border-radius: 0;
+    margin: 0 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+#hamburger-icon {
+    height: 25px;
+    width: 25px;
+    color: white;
+    border-radius: 5px;
+}
+
+#collapse-contact {
+    display: none;
+}
+
+/* Hero Section */
+
+#hero {
+    background-image: url('../img/bg.png');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#hero-text {
+    position: absolute;
+    bottom: 35vh;
+    right: 18vw;
+    width: 500px;
+}
+
+#hero-text h1 {
+    color: cyan;
+    font-size: 45px;
+}
+
+#hero-text #hero-title-sub {
+    font-size: 22px;
+}
+
+/* Mid Section */
+
+#mid {
+    background-color: black;
+    color: white;
+    padding-top: 100px;
+}
+
+#motto #motto-title,
+#about #about-us,
+#services #our-services {
+    font-size: 22px;
+    color: gray;
+    font-weight: 400;
+}
+
+#motto #motto-text {
+    font-size: 42px;
+}
+
+hr.solid-seperator {
+    border-top: 3px solid;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#about {
+    margin-top: 100px;
+}
+
+#about-tiles div {
+    background-color: #0d0d0d;
+    border-radius: 10px;
+    height: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#about-tiles div p {
+    margin-top: 60px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+#about-tiles div:hover {
+    transform: scale(1.1);
+}
+
+#services {
+    margin-top: 60px;
+}
+
+#services div {
+    background-color: #0b0b0b;
+    border-radius: 10px;
+    height: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#services div:hover {
+    transform: translateY(-5%);
+}
+
+#services #services-tile-title {
+    font-size: 30px;
+}
+
+#services #services-tile-para {
+    font-size: 20px;
+    margin-top: 60px;
+}
+
+#services #services-tile-2 span {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* Footer Section */
+#footer {
+    background: linear-gradient(to bottom, #000000, #170D68);
+    height: 100%;
+}
+
+#footer #footer-text {
+    padding-top: 200px;
+    width: 100%;
+}
+
+#footer-text p {
+    margin: 20px 0 40px 0;
+    color: gray;
+    font-size: 20px;
+}
+
+#footer-text #footer-btn {
+    width: 150px;
+    font-size: 18px;
+}
+
+#footer #watermark {
+    margin-top: 150px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+#watermark a {
+    color: cyan;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    #contact-btn {
+        display: none;
+    }
+
+    #collapse-contact {
+        display: block;
+    }
+
+    #hero-text {
+        bottom: 20vh;
+        right: 5vw;
+        width: 350px;
+    }
+    
+    #hero-text h1 {
+        font-size: 35px;
+    }
+
+    #hero-text #hero-title-sub {
+        font-size: 15px;
+    }
+
+    #hero-text #hero-desc{
+        font-size: 12px;
+    }
+}
+
+@media screen and (width <= 1000px) {
+    #services-tile-para {
+        display: none;
+    }
+
+    #about-tiles div p {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #services #services-tile-2 span {
+        font-size: 12px;
+    }
+    #nav-logo {
+        margin: 0 10rem 0 1rem;
+    }
+}

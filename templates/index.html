@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Shield</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="../static/img/AS_logo.png">
+
+    <script src="../static/js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="loader"></div>
+    <section class="container-fluid text-white" id="hero">
+        <nav class="navbar navbar-expand-sm fixed-top" id="navbar">
+            <div class="container-fluid my-3">
+                <a class="navbar-brand" href="#" id="nav-logo">Aura Shield</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" fill="#fff" id="hamburger-icon">
+                        <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/>
+                    </svg>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                    <ul class="navbar-nav" id="nav-list">
+                        <li class="nav-item mx-5"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item mx-5"><a href="#motto" class="nav-link">About</a></li>
+                        <li class="nav-item mx-5"><a href="#about" class="nav-link">Services</a></li>
+                        <li class="nav-item mx-5"><a href="#footer" class="nav-link">Try Out</a></li>
+                        <li class="nav-item mx-5"><a href="/team" class="nav-link" id="collapse-contact">Team</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn" onclick="window.location.href = '/team'" id="contact-btn">Team</button>
+            </div>
+        </nav>
+        <div class="container-md text-end" id="hero-text">
+            <h1>Aura Shield</h1>
+            <p id="hero-title-sub">Empowering health, embracing safety</p>
+            <p class="fw-light" id="hero-desc">A ground-breaking initiative that addresses the need
+                to transform the way users interact with and understand 
+                the chemical composition of everyday products</p>
+            <button type="button" onclick="location.href = '#motto'" class="btn btn-outline-info mt-2">
+                Learn More
+            </button>
+        </div>
+    </section>
+    <section class="container-fluid" id="mid">
+        <div class="container-md text-center" id="motto">
+            <h1 id="motto-title">What we believe in</h1>
+            <p id="motto-text">A bridge between consumers and the intricate world of chemical compositions</p>
+        </div>
+        <div class="container-md mt-5 w-75 bg-white">
+            <hr class="solid-seperator">
+        </div>
+        <div class="container-fluid text-center" id="about">
+            <h1 id="about-us">About Us</h1>
+            <div class="container-md row mx-auto" id="about-tiles">
+                <div class="col m-5" id="about-tile-1">
+                    <svg class="mt-5" width="129" height="150" viewBox="0 0 129 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_28_10)">
+                            <path d="M70.0271 103.125C99.6045 103.125 123.665 81.0469 123.665 53.9062C123.665 26.7656 99.6045 4.6875 70.0271 4.6875C40.4497 4.6875 16.3893 26.7656 16.3893 53.9062C16.3893 81.0469 40.4497 103.125 70.0271 103.125ZM70.0271 9.375C96.7847 9.375 118.556 29.3531 118.556 53.9062C118.556 78.4594 96.7847 98.4375 70.0271 98.4375C43.2695 98.4375 21.4977 78.4594 21.4977 53.9062C21.4977 29.3531 43.2644 9.375 70.0271 9.375ZM47.0395 131.25C41.2108 131.25 36.8227 135.277 36.8227 140.625V147.656C36.8227 148.278 37.0918 148.874 37.5709 149.314C38.0499 149.753 38.6995 150 39.3769 150H100.677C101.355 150 102.004 149.753 102.483 149.314C102.962 148.874 103.231 148.278 103.231 147.656V140.977C103.231 135.52 98.7412 131.25 93.0147 131.25H47.0395ZM98.1231 140.977V145.312H41.9311V140.625C41.9311 137.864 44.0306 135.938 47.0395 135.938H93.0147C95.9265 135.938 98.1231 138.103 98.1231 140.977Z" fill="white"/>
+                            <path d="M67.4883 117.084C67.4883 117.113 67.4729 117.131 67.4729 117.159V124.678C67.4729 125.3 67.742 125.896 68.221 126.335C68.7 126.775 69.3497 127.022 70.0271 127.022C70.7045 127.022 71.3542 126.775 71.8332 126.335C72.3122 125.896 72.5813 125.3 72.5813 124.678V117.159C72.5813 117.127 72.5609 117.098 72.5609 117.066C88.9903 116.52 104.655 110.561 116.687 100.28L122.715 105.806C123.196 106.233 123.842 106.469 124.511 106.464C125.181 106.459 125.822 106.212 126.295 105.778C126.769 105.343 127.037 104.755 127.043 104.141C127.049 103.526 126.792 102.934 126.326 102.492L118.531 95.3391C118.052 94.8997 117.402 94.6528 116.725 94.6528C116.048 94.6528 115.398 94.8997 114.919 95.3391C102.853 106.406 86.8183 112.5 69.7615 112.5C52.7047 112.5 36.6695 106.406 24.6087 95.3391C12.5478 84.2719 5.90698 69.5578 5.90698 53.9062C5.90698 38.2547 12.5478 23.5406 24.6087 12.4734C25.0875 12.0339 25.3565 11.4379 25.3565 10.8164C25.3565 10.1949 25.0875 9.59889 24.6087 9.15937L16.8133 2.00625C16.3316 1.57931 15.6864 1.34308 15.0167 1.34842C14.347 1.35376 13.7064 1.60025 13.2328 2.0348C12.7593 2.46935 12.4906 3.05719 12.4848 3.67171C12.479 4.28624 12.7365 4.87827 13.2017 5.32031L19.2245 10.8516C7.33552 22.5286 0.745996 37.926 0.798622 53.9062C0.798622 70.8047 7.97076 86.7 20.9971 98.6531C33.3549 110.027 49.9926 116.623 67.4883 117.084Z" fill="white"/>
+                        </g>
+                            <defs>
+                                <clipPath id="clip0_28_10">
+                                <rect width="127.709" height="150" fill="white" transform="translate(0.798584)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>                        
+                    <p>In an era, where there is a critical need for tools which 
+                        empower individuals to be informed of the choices they make</p>
+                </div>
+                <div class="col m-5" id="about-tile-2">
+                    <svg class="mt-5" width="180" height="167" viewBox="0 0 180 167" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M157.001 38.563L154.289 38.3682C123.418 36.1137 91.5628 17.354 91.2647 17.1871L89.6556 16.213L88.0465 17.1871C87.7485 17.354 55.8936 36.1137 25.0221 38.3682L22.3105 38.563L22.2508 41.096C22.2508 41.8197 21.8634 113.101 88.1358 149.952L89.6556 150.787L91.1754 149.952C157.448 113.101 157.06 41.8197 157.06 41.096L157.001 38.563Z" fill="white"/>
+                    </svg>
+                    <p>The Aura Shield is a groundbreaking initiative that addresses the 
+                        need to inform the individuals of their own choices</p>
+                </div>
+                <div class="col m-5" id="about-tile-3">
+                    <svg class="mt-5 mb-2" width="168" height="150" viewBox="0 0 168 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M134.857 120.703H33.3491C27.3627 120.703 22.4175 116.25 22.4175 110.859V52.0313C22.4175 46.6406 27.3627 42.1875 33.3491 42.1875H55.2123C55.7329 42.1875 57.0343 41.4844 57.2945 41.0156L61.1987 33.75C62.7603 31.1719 66.4042 29.0625 69.7878 29.0625H98.6785C102.062 29.0625 105.706 31.1719 107.268 33.75L111.172 41.0156C111.432 41.4844 112.473 42.1875 113.254 42.1875H135.117C141.104 42.1875 146.049 46.6406 146.049 52.0313V110.859C145.789 116.25 140.843 120.703 134.857 120.703ZM33.3491 48.9844C31.2669 48.9844 29.7052 50.3906 29.7052 52.2656V111.094C29.7052 112.969 31.2669 114.375 33.3491 114.375H134.857C136.939 114.375 138.501 112.969 138.501 111.094V52.2656C138.501 50.3906 136.939 48.9844 134.857 48.9844H112.994C109.61 48.9844 105.966 46.875 104.405 44.2969L100.5 37.0313C100.24 36.5625 99.199 35.8594 98.4182 35.8594H69.5275C69.007 35.8594 67.7056 36.5625 67.4453 37.0313L63.5412 44.2969C61.9795 46.875 58.3356 48.9844 54.952 48.9844H33.3491Z" fill="white"/>
+                        <path d="M84.103 107.578C66.1439 107.578 51.5684 94.4531 51.5684 78.2813C51.5684 62.1094 66.1439 48.9844 84.103 48.9844C102.062 48.9844 116.638 62.1094 116.638 78.2813C116.638 94.4531 102.062 107.578 84.103 107.578ZM84.103 55.3125C70.048 55.3125 58.5959 65.625 58.5959 78.2813C58.5959 90.9375 70.048 101.25 84.103 101.25C98.1579 101.25 109.61 90.9375 109.61 78.2813C109.61 65.625 98.1579 55.3125 84.103 55.3125ZM123.925 55.3125C123.925 57.1875 122.364 58.5938 120.281 58.5938C118.199 58.5938 116.638 57.1875 116.638 55.3125C116.638 53.4375 118.199 52.0313 120.281 52.0313C122.364 52.0313 123.925 53.6719 123.925 55.3125ZM36.9929 35.8594H51.5684V39.1406H36.9929V35.8594Z" fill="white"/>
+                        <path d="M84.103 65.1562V61.875C74.2125 61.875 65.8836 69.1406 65.8836 78.2813H69.5275C69.5275 71.0156 76.0344 65.1562 84.103 65.1562Z" fill="white"/>
+                    </svg>
+                    <p>
+                        By leveraging image recognition and text analysis algorithm, 
+                        Aura Shield seeks to provide users with means to identify chemical compounds</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center" id="services">
+            <h1 id="our-services">Our Services</h1>
+            <div class="container-md d-flex my-5" id="servies-tile-1">
+                <p class="text-end p-4 mt-1" id="services-tile-title">Chemical Structure Recognition (CSR) System</p>
+                <div class="vr bg-white"></div>
+                <p class="text-start p-4 mt-4" id="services-tile-para">In this era of advanced technology and automation, information extraction has become a very common practice. 
+                    OCR is not adequate for processing chemical compounds as it can be represented both as textual as well as graphical.
+                    <br>The CSR system is a modern image processing library which allows us to extract structural information of a chemical structure.</p>
+            </div>
+            <div class="container-md d-flex mt-5" id="services-tile-2">
+                <p class="text-end p-4" id="services-tile-para">Although this proposed system is primarily intended to help chemists complete their 
+                    chemical structure and predict new chemical structures, it is also envisioned to be utilized as a learning aid for users.</p>
+                <div class="vr bg-white"></div>
+                <p class="text-start p-4 mt-3" id="services-tile-title">Chemical Structure Recognition:<br>
+                    <span>A Machine Learning technique</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid text-center text-white" id="footer">
+        <div class="container-sm" id="footer-text">
+            <h1>Empower yourself with knowledge today</h1>
+            <p>Start understanding what goes into your body or around it 
+                -- <br>you may be surprised</p>
+            <button class="btn btn-outline-info" onclick="window.location.href = '/database'" id="footer-btn">Try Now</button>
+            <p id="watermark">&copy; Designed & Developed by <a href="#">Aura Shield</a></p>
+        </div>
+    </section>
+</body>
+</html>
